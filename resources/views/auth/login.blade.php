@@ -148,9 +148,9 @@
                                     </div>
                                 </div>
                                 <div class="m-login__form-action">
-                                    <button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primary">
+                                    <!-- <button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primary">
                                         Sign In
-                                    </button>
+                                    </button> -->
                                     <button type="submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primary">
                                     {{ __('Login') }}
                                 </button>
