@@ -52797,7 +52797,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52808,6 +52808,43 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -52882,28 +52919,57 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "table",
-      { staticClass: "table table-bordered" },
-      [
-        _vm._m(1),
-        _vm._v(" "),
-        _vm._l(_vm.users, function(user) {
-          return _c("tr", [
-            _c("td", [_vm._v(_vm._s(user.id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(user.id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(user.id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v("\n\t\t" + _vm._s(user.id) + "\n\t\t")])
+    _c("div", { staticClass: "m-grid__item m-grid__item--fluid m-wrapper" }, [
+      _c("div", { staticClass: "m-content" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "m-portlet m-portlet--success m-portlet--head-solid-bg"
+              },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "m-portlet__body" }, [
+                  _c(
+                    "table",
+                    {
+                      staticClass:
+                        "table table-striped- table-bordered table-hover table-checkable",
+                      attrs: { id: "m_table_1" }
+                    },
+                    [
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(_vm.users, function(user) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(user.id))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(user.username))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(user.name))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(user.email))]),
+                            _vm._v(" "),
+                            _vm._m(2, true),
+                            _vm._v(" "),
+                            _vm._m(3, true)
+                          ])
+                        })
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
           ])
-        })
-      ],
-      2
-    )
+        ])
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -52911,13 +52977,45 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12 margin-tb" }, [
-        _c("div", { staticClass: "pull-left" }, [
-          _c("h2", [_vm._v("Users Management")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "pull-right" })
+    return _c("div", { staticClass: "m-portlet__head" }, [
+      _c("div", { staticClass: "m-portlet__head-caption" }, [
+        _c("div", { staticClass: "m-portlet__head-title" }, [
+          _c("span", { staticClass: "m-portlet__head-icon" }, [
+            _c("i", { staticClass: "flaticon-placeholder-2" })
+          ]),
+          _vm._v(" "),
+          _c("h3", { staticClass: "m-portlet__head-text" }, [
+            _vm._v(
+              "\n\t    \t\t\t\t\t\t\t\tUser Management\n\t    \t\t\t\t\t\t\t"
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "m-portlet__head-tools" }, [
+        _c("ul", { staticClass: "m-portlet__nav" }, [
+          _c("li", { staticClass: "m-portlet__nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air",
+                attrs: { href: "#" }
+              },
+              [
+                _c("span", [
+                  _c("i", { staticClass: "la la-plus" }),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\tNew User\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                    )
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
       ])
     ])
   },
@@ -52925,16 +53023,62 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("No")]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("No")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("User Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Email")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Roles")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("span", { staticClass: "m-badge  m-badge--info m-badge--wide" }, [
+        _vm._v("Info")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c(
+        "button",
+        {
+          staticClass: "btn m-btn--square  btn-primary",
+          attrs: { type: "button" }
+        },
+        [
+          _vm._v(
+            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEdit\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+          )
+        ]
+      ),
       _vm._v(" "),
-      _c("th", [_vm._v("Name")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Email")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Roles")]),
-      _vm._v(" "),
-      _c("th", { attrs: { width: "280px" } }, [_vm._v("Action")])
+      _c(
+        "button",
+        {
+          staticClass: "btn m-btn--square  btn-danger",
+          attrs: { type: "button" }
+        },
+        [
+          _vm._v(
+            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tDelete\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+          )
+        ]
+      )
     ])
   }
 ]
