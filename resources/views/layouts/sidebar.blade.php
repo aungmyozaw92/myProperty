@@ -27,17 +27,17 @@
                 </span>
             </a>
         </li>
-        <li class="m-menu__section ">
+        <!-- <li class="m-menu__section ">
             <h4 class="m-menu__section-text">
                 Components
             </h4>
             <i class="m-menu__section-icon flaticon-more-v3"></i>
-        </li>
+        </li> -->
         <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
             <a  href="javascript:;" class="m-menu__link m-menu__toggle">
                 <i class="m-menu__link-icon flaticon-layers"></i>
                 <span class="m-menu__link-text">
-                    Base
+                    User Management
                 </span>
                 <i class="m-menu__ver-arrow la la-angle-right"></i>
             </a>
@@ -47,31 +47,20 @@
                     <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true" >
                         <span class="m-menu__link">
                             <span class="m-menu__link-text">
-                                Base
+                                
                             </span>
                         </span>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true" >
-                        <a  href="components/base/state.html" class="m-menu__link ">
+                        <a  href="{{ url('admin/user') }}" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                 <span></span>
                             </i>
                             <span class="m-menu__link-text">
-                                State Colors
+                                User List
                             </span>
                         </a>
-                    </li>
-
-                    <li class="m-menu__item " aria-haspopup="true" >
-                        <a  href="components/base/navs.html" class="m-menu__link ">
-                            <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                                <span></span>
-                            </i>
-                            <span class="m-menu__link-text">
-                                Navs
-                            </span>
-                        </a>
-                    </li>                               
+                    </li>                              
                 </ul>
             </div>
         </li>
