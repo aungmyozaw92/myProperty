@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('users','Api\UserController');
+Route::get('get_all_roles','Api\UserController@getAllRoles');
+// Route::get('/admin', 'HomeController@index')->name('home');

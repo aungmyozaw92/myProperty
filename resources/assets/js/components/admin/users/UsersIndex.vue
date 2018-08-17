@@ -20,14 +20,12 @@
 		    					<div class="m-portlet__head-tools">
 		    						<ul class="m-portlet__nav">
 										<li class="m-portlet__nav-item">
-											<a href="#" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
-												<span>
+											<router-link :to="{name: 'Users.Add'}" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+											<span>
 													<i class="la la-plus"></i>
-													<span>
-														New User
-													</span>
+													<span>New User</span>
 												</span>
-											</a>
+											</router-link>
 										</li>
 		    						</ul>
 		    					</div>
@@ -50,13 +48,21 @@
 											<td>{{user.username}}</td>
 											<td>{{user.name}}</td>
 											<td>{{user.email}}</td>
-											<td><span class="m-badge  m-badge--info m-badge--wide">Info</span></td>
-											<td><button type="button" class="btn m-btn--square  btn-primary">
-															Edit
-														</button>
-														<button type="button" class="btn m-btn--square  btn-danger">
-															Delete
-														</button></td>
+											<td>
+												<span v-if="user.roles">
+											           <span v-for="role in user.roles" class="m-badge  m-badge--success m-badge--wide">
+														{{role.name}}
+														</span>
+											    </span>										</td>
+											<td>
+												<router-link :to="{name: 'Users.Edit',params: {id: user.id}}" class="btn m-btn--square  btn-primary">
+											<span>
+													<i class="la la-plus"></i>
+													<span>Edit</span>
+												</span>
+											</router-link>
+												<button type="button" class="btn m-btn--square  btn-danger">Delete</button>
+											</td>
 										</tr>
 									</tbody>
 								</table>
@@ -74,26 +80,13 @@
 
 <script>
 	export default {
-		data() {
-           return {
-           	users: [],
-           	user: {
-           		id: 0,
-           		name: '',
-           		email: ''
-           	}
+		mounted() {
+           this.$store.dispatch('getUsers');
+        },
+        computed: {
+           users(){
+           		return this.$store.getters.users;
            }
-        },
-        mounted() {
-           this.getUsers()
-        },
-        methods: {
-        	getUsers(){
-        		axios.get('/api/users').then(response=>{
-        			console.log(response)
-        			this.users = response.data
-        		})
-        	}
         }
 	}
 </script>

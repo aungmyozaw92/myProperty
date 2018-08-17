@@ -1,4 +1,6 @@
-<button class="m-aside-left-close  m-aside-left-close--skin-dark " id="m_aside_left_close_btn">
+<template>
+	<div>
+		<button class="m-aside-left-close  m-aside-left-close--skin-dark " id="m_aside_left_close_btn">
     <i class="la la-close"></i>
 </button>
 <div id="m_aside_left" class="m-grid__item  m-aside-left  m-aside-left--skin-dark ">
@@ -11,7 +13,7 @@
     >
     <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
         <li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
-        <a  href="{{ url('admin/home') }}" class="m-menu__link ">
+        <a  href="admin/home" class="m-menu__link ">
                 <i class="m-menu__link-icon flaticon-line-graph"></i>
                 <span class="m-menu__link-title">
                     <span class="m-menu__link-wrap">
@@ -52,14 +54,14 @@
                         </span>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true" >
-                        <a  href="{{ url('admin/user') }}" class="m-menu__link ">
+                        <router-link :to="{name: 'Users.Index'}" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                 <span></span>
                             </i>
                             <span class="m-menu__link-text">
                                 User List
                             </span>
-                        </a>
+                        </router-link>
                     </li>                              
                 </ul>
             </div>
@@ -102,6 +104,12 @@
 </div>
 <!-- END: Aside Menu -->
 </div>
-            <!-- <li class="{{ (Request::is('admin/settings*') ? 'active' : '') }}">
-               
-        </li> -->
+
+
+	</div>
+</template>
+<script>
+    // export default {
+    //     name: 'sidebar'
+    // }
+</script>
