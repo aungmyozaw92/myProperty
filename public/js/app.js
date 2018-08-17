@@ -51189,6 +51189,15 @@ var index_esm = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_admin_users_UsersAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_admin_users_UsersAdd_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_admin_users_UsersEdit_vue__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_admin_users_UsersEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_admin_users_UsersEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_admin_purposes_List_vue__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_admin_purposes_List_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_admin_purposes_List_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_admin_purposes_Add_vue__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_admin_purposes_Add_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_admin_purposes_Add_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_purposes_Edit_vue__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_purposes_Edit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_admin_purposes_Edit_vue__);
+
+
+
 
 
 
@@ -51196,9 +51205,15 @@ var index_esm = {
 
 var routes = [{
 	name: 'dashboard',
-	path: '/admin/home',
+	path: '/',
 	component: __WEBPACK_IMPORTED_MODULE_0__components_admin_Dashboard_vue___default.a
 }, {
+	name: 'AdminHome',
+	path: '/admin/home',
+	component: __WEBPACK_IMPORTED_MODULE_0__components_admin_Dashboard_vue___default.a
+},
+//User Routes
+{
 	name: 'Users.Index',
 	path: '/admin/users',
 	component: __WEBPACK_IMPORTED_MODULE_1__components_admin_users_UsersIndex_vue___default.a,
@@ -51213,6 +51228,24 @@ var routes = [{
 	component: __WEBPACK_IMPORTED_MODULE_3__components_admin_users_UsersEdit_vue___default.a,
 	props: function props(route) {
 		return { propUserId: route.params.id };
+	}
+},
+//Purpose Route
+{
+	name: 'Purpose.Index',
+	path: '/admin/purpuses',
+	component: __WEBPACK_IMPORTED_MODULE_4__components_admin_purposes_List_vue___default.a,
+	children: []
+}, {
+	path: '/admin/purposes/create',
+	name: 'Purpose.Add',
+	component: __WEBPACK_IMPORTED_MODULE_5__components_admin_purposes_Add_vue___default.a
+}, {
+	path: '/admin/purposes/:id/edit',
+	name: 'Purpose.Edit',
+	component: __WEBPACK_IMPORTED_MODULE_6__components_admin_purposes_Edit_vue___default.a,
+	props: function props(route) {
+		return { propPurposeId: route.params.id };
 	}
 }];
 
@@ -56778,30 +56811,6 @@ module.exports = Component.exports
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 // export default {
 //     name: 'sidebar'
@@ -56906,7 +56915,34 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(4)
+                _c(
+                  "li",
+                  {
+                    staticClass: "m-menu__item  m-menu__item--active",
+                    attrs: { "aria-haspopup": "true" }
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "m-menu__link",
+                        attrs: { to: { name: "Purpose.Index" } }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "m-menu__link-icon flaticon-share"
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "m-menu__link-text" }, [
+                          _vm._v(
+                            "\n                    Purpose\n                "
+                          )
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
               ]
             )
           ]
@@ -57002,108 +57038,6 @@ var staticRenderFns = [
       [
         _c("span", { staticClass: "m-menu__link" }, [
           _c("span", { staticClass: "m-menu__link-text" })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "li",
-      {
-        staticClass: "m-menu__item  m-menu__item--submenu",
-        attrs: { "aria-haspopup": "true", "m-menu-submenu-toggle": "hover" }
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass: "m-menu__link m-menu__toggle",
-            attrs: { href: "javascript:;" }
-          },
-          [
-            _c("i", { staticClass: "m-menu__link-icon flaticon-share" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "m-menu__link-text" }, [
-              _vm._v("\n                    Icons\n                ")
-            ]),
-            _vm._v(" "),
-            _c("i", { staticClass: "m-menu__ver-arrow la la-angle-right" })
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "m-menu__submenu " }, [
-          _c("span", { staticClass: "m-menu__arrow" }),
-          _vm._v(" "),
-          _c("ul", { staticClass: "m-menu__subnav" }, [
-            _c(
-              "li",
-              {
-                staticClass: "m-menu__item ",
-                attrs: { "aria-haspopup": "true" }
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "m-menu__link ",
-                    attrs: { href: "components/icons/flaticon.html" }
-                  },
-                  [
-                    _c(
-                      "i",
-                      {
-                        staticClass:
-                          "m-menu__link-bullet m-menu__link-bullet--dot"
-                      },
-                      [_c("span")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "m-menu__link-text" }, [
-                      _vm._v(
-                        "\n                                Flaticon\n                            "
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              {
-                staticClass: "m-menu__item ",
-                attrs: { "aria-haspopup": "true" }
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "m-menu__link ",
-                    attrs: { href: "components/icons/fontawesome.html" }
-                  },
-                  [
-                    _c(
-                      "i",
-                      {
-                        staticClass:
-                          "m-menu__link-bullet m-menu__link-bullet--dot"
-                      },
-                      [_c("span")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "m-menu__link-text" }, [
-                      _vm._v(
-                        "\n                                Fontawesome\n                            "
-                      )
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
         ])
       ]
     )
@@ -57456,6 +57390,352 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(80)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(82)
+/* template */
+var __vue_template__ = __webpack_require__(83)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/admin/purposes/List.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-733f191e", Component.options)
+  } else {
+    hotAPI.reload("data-v-733f191e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(81);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(14)("4f4fb2d2", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-733f191e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./List.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-733f191e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./List.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(13)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "m-grid__item m-grid__item--fluid m-wrapper" }, [
+      _c("div", { staticClass: "m-content" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "m-portlet m-portlet--success m-portlet--head-solid-bg"
+              },
+              [
+                _c("div", { staticClass: "m-portlet__head" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "m-portlet__head-tools" }, [
+                    _c("ul", { staticClass: "m-portlet__nav" }, [
+                      _c(
+                        "li",
+                        { staticClass: "m-portlet__nav-item" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass:
+                                "btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air",
+                              attrs: { to: { name: "Purpose.Add" } }
+                            },
+                            [
+                              _c("span", [
+                                _c("i", { staticClass: "la la-plus" }),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("New User")])
+                              ])
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(1)
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "m-portlet__head-caption" }, [
+      _c("div", { staticClass: "m-portlet__head-title" }, [
+        _c("span", { staticClass: "m-portlet__head-icon" }, [
+          _c("i", { staticClass: "flaticon-placeholder-2" })
+        ]),
+        _vm._v(" "),
+        _c("h3", { staticClass: "m-portlet__head-text" }, [
+          _vm._v(
+            "\n\t    \t\t\t\t\t\t\t\tPurpose Management\n\t    \t\t\t\t\t\t\t"
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "m-portlet__body" }, [
+      _c(
+        "table",
+        {
+          staticClass:
+            "table table-striped- table-bordered table-hover table-checkable",
+          attrs: { id: "m_table_1" }
+        },
+        [
+          _c("thead", [
+            _c("tr", [
+              _c("th", [_vm._v("No")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("User Name")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("Name")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("Email")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("Roles")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("Action")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tbody")
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-733f191e", module.exports)
+  }
+}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/admin/purposes/Add.vue"
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/admin/purposes/Edit.vue"
+
+module.exports = Component.exports
+
 
 /***/ })
 /******/ ]);
