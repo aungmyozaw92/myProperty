@@ -130,9 +130,6 @@
         },
 		methods: {
 			addNewUser() {
-				console.log(this)
-				console.log("input rolessssssssssssss")
-				console.log(this.roles)
 				this.errors = []
 				//passing data to api
 				
@@ -154,8 +151,6 @@
 			},
 			getRoles(){
         		axios.get('/api/get_all_roles').then(response=>{
-        			console.log("rrrrrrrrrrrrrrrrrrrrr");
-				console.log(response.data);
         			this.all_roles = response.data
         		})
         	}

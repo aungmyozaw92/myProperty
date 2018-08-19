@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ProperetyTypeController extends Controller
+class PropertyTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ProperetyTypeController extends Controller
      */
     public function index()
     {
-        //
+        return view('home');
     }
 
     /**

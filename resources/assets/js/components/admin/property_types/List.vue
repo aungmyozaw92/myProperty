@@ -13,17 +13,17 @@
 		    								<i class="flaticon-placeholder-2"></i>
 		    							</span>
 		    							<h3 class="m-portlet__head-text">
-		    								Purpose Management
+		    								Property Type Management
 		    							</h3>
 		    						</div>
 		    					</div>
 		    					<div class="m-portlet__head-tools">
 		    						<ul class="m-portlet__nav">
 										<li class="m-portlet__nav-item">
-											<router-link :to="{name: 'Purpose.Add'}" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+											<router-link :to="{name: 'PropertyType.Add'}" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
 											<span>
 													<i class="la la-plus"></i>
-													<span>New Purpose</span>
+													<span>New Property Type</span>
 												</span>
 											</router-link>
 										</li>
@@ -38,15 +38,15 @@
 											<th>Name</th>
 											<th>Actions</th>
 										</tr>
-										<tr v-for="(purpose, index) in purposes">
+										<tr v-for="(p_type, index) in property_types">
 											<td>{{index+1}}</td>
-											<td>{{purpose.name}}</td>
+											<td>{{p_type.name}}</td>
 											<td>
-												<router-link :to="{name: 'Purpose.Edit',params: {id: purpose.id}}" class="btn m-btn--square  btn-primary btn-sm">
+												<router-link :to="{name: 'PropertyType.Edit',params: {id: p_type.id}}" class="btn m-btn--square  btn-primary btn-sm">
 											<span>Edit
 												</span>
 											</router-link>
-												<button type="button" class="btn m-btn--square btn-danger btn-sm" v-on:click="deletePurpose(purpose.id,index)">Delete</button>
+												<button type="button" class="btn m-btn--square btn-danger btn-sm" v-on:click="deletePropertyType(p_type.id,index)">Delete</button>
 											</td>
 										</tr>
 									</thead>
@@ -68,18 +68,18 @@
 <script>
 	export default {
 		mounted() {
-           this.$store.dispatch('getPurposes');
+           this.$store.dispatch('getPropertyTypes');
         },
         computed: {
-           purposes(){
-           		return this.$store.getters.purposes;
+           property_types(){
+           		return this.$store.getters.property_types;
            }
         },
         methods: {
-        	deletePurpose(id,index) {
-				axios.delete('/api/purposes/'+id).then(response=>{
+        	deletePropertyType(id,index) {
+				axios.delete('/api/property_types/'+id).then(response=>{
 					console.log(response)
-					this.purposes.splice(index,1)
+					this.property_types.splice(index,1)
 				}).catch(error=>{
 					console.log(error)
 				})

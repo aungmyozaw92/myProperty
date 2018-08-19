@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <!--   <div> -->
         <header id="m_header" class="m-grid__item    m-header "  m-minimize-offset="200" m-minimize-mobile-offset="200" >
             <div class="m-container m-container--fluid m-container--full-height">
                 <div class="m-stack m-stack--ver m-stack--desktop">
@@ -530,7 +530,7 @@
                                                     document.getElementById('logout-form').submit();" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
                                                     Logout
                                                 </a>            
-                                                <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                                                <form id="logout-form" action="/admin/logout" method="POST" style="display: none;">
                                                     @csrf
                                                 </form>
                                             </li>
@@ -549,7 +549,7 @@
 </div>
 </div>
 </header>
-</div>
+<!-- </div> -->
 </template>
 
 <script>

@@ -5,6 +5,9 @@ import UsersEdit from './components/admin/users/UsersEdit.vue';
 import PurposeList from './components/admin/purposes/List.vue';
 import PurposeAdd from './components/admin/purposes/Add.vue';
 import PurposeEdit from './components/admin/purposes/Edit.vue';
+import PropertyTypeList from './components/admin/property_types/List.vue';
+import PropertyTypeAdd from './components/admin/property_types/Add.vue';
+import PropertyTypeEdit from './components/admin/property_types/Edit.vue';
 
 export const routes = [
 	{
@@ -39,7 +42,7 @@ export const routes = [
 //Purpose Route
 	{
 		name: 'Purpose.Index',
-		path: '/admin/purpuses',
+		path: '/admin/purposes',
 		component: PurposeList,
 		children: [	        
 		]
@@ -53,7 +56,27 @@ export const routes = [
 		path:'/admin/purposes/:id/edit',
 		name:'Purpose.Edit',
 		component: PurposeEdit,
-		props: (route) => ({propPurposeId: route.params.id}),
+		props: true,
+	},
+
+//Property Type Route
+	{
+		name: 'PropertyType.Index',
+		path: '/admin/property_types',
+		component: PropertyTypeList,
+		children: [	        
+		]
+	},
+	{
+		path:'/admin/property_types/create',
+		name:'PropertyType.Add',
+		component: PropertyTypeAdd,
+	},
+	{
+		path:'/admin/property_types/:id/edit',
+		name:'PropertyType.Edit',
+		component: PropertyTypeEdit,
+		props: true,
 	}
 
 ]

@@ -13,7 +13,7 @@
     >
     <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
         <li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
-            <a  href="admin/home" class="m-menu__link ">
+            <router-link :to="{name: 'AdminHome'}" class="m-menu__link ">
                 <i class="m-menu__link-icon flaticon-line-graph"></i>
                 <span class="m-menu__link-title">
                     <span class="m-menu__link-wrap">
@@ -27,7 +27,7 @@
                         </span>
                     </span>
                 </span>
-            </a>
+            </router-link>
         </li>
         <!-- <li class="m-menu__section ">
             <h4 class="m-menu__section-text">
@@ -66,7 +66,6 @@
                 </ul>
             </div>
         </li>
-        <!-- <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover"> -->
         <li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
             <router-link :to="{name: 'Purpose.Index'}" class="m-menu__link">
                 <i class="m-menu__link-icon flaticon-share"></i>
@@ -74,8 +73,15 @@
                     Purpose
                 </span>
             </router-link>
-            
-        </li>                           
+        </li>
+        <li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
+            <router-link :to="{name: 'PropertyType.Index'}" class="m-menu__link">
+                <i class="m-menu__link-icon flaticon-share"></i>
+                <span class="m-menu__link-text">
+                    Property Type
+                </span>
+            </router-link>
+        </li>                            
     </ul>
 </div>
 <!-- END: Aside Menu -->

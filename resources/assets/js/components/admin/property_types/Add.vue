@@ -13,14 +13,14 @@
 		    								<i class="flaticon-placeholder-2"></i>
 		    							</span>
 		    							<h3 class="m-portlet__head-text">
-		    								Purpose Form
+		    								Property Type Form
 		    							</h3>
 		    						</div>
 		    					</div>
 		    					<div class="m-portlet__head-tools">
 		    						<ul class="m-portlet__nav">
 										<li class="m-portlet__nav-item">
-											<router-link :to="{name: 'Purpose.Add'}" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+											<router-link :to="{name: 'PropertyType.Add'}" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
 											<span>
 													<i class="la la-plus"></i>
 													<span>Back</span>
@@ -49,7 +49,7 @@
 				    				</div>
 				    				<div class="m-portlet__foot m-portlet__foot--fit">
 				    					<div class="m-form__actions">
-				    						<button type="button" v-on:click="addNewPurpose()" class="btn btn-success">
+				    						<button type="button" v-on:click="addNewPropertType()" class="btn btn-success">
 				    							Submit
 				    						</button>
 				    					</div>
@@ -78,13 +78,13 @@
 
 		},
 		methods: {
-			addNewPurpose(){
+			addNewPropertType(){
 				this.errors = []
 				//passing data to api
-				axios.post('/api/purposes',{
+				axios.post('/api/property_types',{
 					name: this.name,
 				}).then(response=>{
-					this.$router.push('/admin/purposes');
+					this.$router.push('/admin/property_types');
 				}).catch(error=>{
 					if (error.response.status = 422) {
 						this.errors = error.response.data.errors
