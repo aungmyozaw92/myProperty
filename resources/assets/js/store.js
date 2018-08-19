@@ -2,7 +2,8 @@ export default {
 	state: {
 		users: [],
 		purposes: [],
-		property_types: []
+		property_types: [],
+		distances: []
 	},
 	getters: {
 		users(state){
@@ -13,6 +14,9 @@ export default {
 		},
 		property_types(state){
 			return state.property_types;
+		},
+		distances(state){
+			return state.distances
 		}
 	},
 	mutations: {
@@ -24,6 +28,9 @@ export default {
 		},
 		updatePropertyTypes(state,payload){
 			state.property_types = payload;
+		},
+		updateDistances(state,payload){
+			state.distances = payload;
 		}		
 	},
 	actions: {
@@ -40,6 +47,11 @@ export default {
 		getPropertyTypes(context){
 			axios.get('/api/property_types').then(response=>{
 				context.commit('updatePropertyTypes',response.data.property_types);
+			})
+		},
+		getDistances(context){
+			axios.get('/api/distances').then(response=>{
+				context.commit('updateDistances',response.data.distances);
 			})
 		}
 	}

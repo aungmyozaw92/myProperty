@@ -47,6 +47,6 @@ class PropertyTypeController extends Controller
      public function destroy($id)
     {
         $this->property_type->destroy($id);
-        return response()->json('User has been successfully Delete');
+        return response()->json('PropertyType has been successfully Delete');
     }
 }

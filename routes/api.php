@@ -22,4 +22,5 @@ Route::get('get_all_roles','Api\UserController@getAllRoles');
 
 Route::resource('purposes','Api\PurposeController');
 Route::resource('property_types','Api\PropertyTypeController');
+Route::resource('distances','Api\DistanceController');
 // Route::get('/admin', 'HomeController@index')->name('home');

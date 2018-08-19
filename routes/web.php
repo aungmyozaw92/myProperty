@@ -39,4 +39,5 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin', 'middleware' => ['auth
     Route::resource('products','ProductController');
     Route::resource('purposes','PurposeController');
     Route::resource('property_types','PropertyTypeController');
+    Route::resource('distances','DistanceController');
 });

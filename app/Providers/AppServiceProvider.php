@@ -37,6 +37,10 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Admin\PropertyType\PropertyTypeRepository::class,
             \App\Repositories\Admin\PropertyType\EloquentPropertyTypeRepository::class
         );
+          $this->app->bind(
+            \App\Repositories\Admin\Distance\DistanceRepository::class,
+            \App\Repositories\Admin\Distance\EloquentDistanceRepository::class
+        );
       
     }
 

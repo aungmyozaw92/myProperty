@@ -8,6 +8,9 @@ import PurposeEdit from './components/admin/purposes/Edit.vue';
 import PropertyTypeList from './components/admin/property_types/List.vue';
 import PropertyTypeAdd from './components/admin/property_types/Add.vue';
 import PropertyTypeEdit from './components/admin/property_types/Edit.vue';
+import DistanceList from './components/admin/distances/List.vue';
+import DistanceAdd from './components/admin/distances/Add.vue';
+import DistanceEdit from './components/admin/distances/Edit.vue';
 
 export const routes = [
 	{
@@ -58,7 +61,6 @@ export const routes = [
 		component: PurposeEdit,
 		props: true,
 	},
-
 //Property Type Route
 	{
 		name: 'PropertyType.Index',
@@ -76,6 +78,25 @@ export const routes = [
 		path:'/admin/property_types/:id/edit',
 		name:'PropertyType.Edit',
 		component: PropertyTypeEdit,
+		props: true,
+	},
+//Distance Route
+	{
+		name: 'Distance.Index',
+		path: '/admin/distances',
+		component: DistanceList,
+		children: [	        
+		]
+	},
+	{
+		path:'/admin/distances/create',
+		name:'Distance.Add',
+		component: DistanceAdd,
+	},
+	{
+		path:'/admin/distances/:id/edit',
+		name:'Distance.Edit',
+		component: DistanceEdit,
 		props: true,
 	}
 

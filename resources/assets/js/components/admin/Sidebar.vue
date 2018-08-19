@@ -81,7 +81,15 @@
                     Property Type
                 </span>
             </router-link>
-        </li>                            
+        </li>
+        <li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
+            <router-link :to="{name: 'Distance.Index'}" class="m-menu__link">
+                <i class="m-menu__link-icon flaticon-share"></i>
+                <span class="m-menu__link-text">
+                    Distance
+                </span>
+            </router-link>
+        </li>                             
     </ul>
 </div>
 <!-- END: Aside Menu -->

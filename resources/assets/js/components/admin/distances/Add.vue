@@ -3,7 +3,7 @@
 	     <div class="m-grid__item m-grid__item--fluid m-wrapper">
 		    <div class="m-content">
 		    	<div class="row">
-		    		<div class="col-md-12">
+		    		<div class="col-lg-12">
 		    			<!--begin::Portlet-->
 		    			<div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
 		    				<div class="m-portlet__head">
@@ -13,10 +13,22 @@
 		    								<i class="flaticon-placeholder-2"></i>
 		    							</span>
 		    							<h3 class="m-portlet__head-text">
-		    								PropertyType Management
+		    								Distance Form
 		    							</h3>
 		    						</div>
-		    					</div>		    					
+		    					</div>
+		    					<div class="m-portlet__head-tools">
+		    						<ul class="m-portlet__nav">
+										<li class="m-portlet__nav-item">
+											<router-link :to="{name: 'PropertyType.Add'}" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+											<span>
+													<i class="la la-plus"></i>
+													<span>Back</span>
+												</span>
+											</router-link>
+										</li>
+		    						</ul>
+		    					</div>
 		    				</div>
 		    				<div class="m-portlet__body">
 		    					<!--begin::Form-->
@@ -37,7 +49,7 @@
 				    				</div>
 				    				<div class="m-portlet__foot m-portlet__foot--fit">
 				    					<div class="m-form__actions">
-				    						<button type="button" v-on:click="UpdatePropertyType()" class="btn btn-success">
+				    						<button type="button" v-on:click="addNewDistance()" class="btn btn-success">
 				    							Submit
 				    						</button>
 				    					</div>
@@ -53,41 +65,32 @@
 		</div>
 <!-- 	</div> -->
 </template>
- 
+
 <script>
-export default{
-	props: ['id'],
-	data() {
-		return {
-			name: '',
-			errors: []
-		}
-	},
-	mounted() {
-		axios.get('/api/property_types/'+this.id).then(response=>{
-			var purpose = response.data
-			this.name = purpose.name
-		}).catch(error=>{
-			console.log(error)
-		})
-	},
-	methods: {
-		UpdatePropertyType() {
-			axios.put('/api/property_types/'+this.id, {
-				name: this.name
-			}).then(response=>{
-				this.$router.push('/admin/property_types');
-			}).catch(error=>{
-				console.log(error.response)
-				if (error.response.status = 422) {
-					this.errors = error.response.data.errors
-				}
-			})
+	export default{
+		data(){
+			return{
+				name: '',
+				errors: []
+			}
+		},
+		mounted(){
+
+		},
+		methods: {
+			addNewDistance(){
+				this.errors = []
+				//passing data to api
+				axios.post('/api/distances',{
+					name: this.name,
+				}).then(response=>{
+					this.$router.push('/admin/distances');
+				}).catch(error=>{
+					if (error.response.status = 422) {
+						this.errors = error.response.data.errors
+					}
+				})
+			}
 		}
 	}
-}
 </script>
-
-<style>
-	
-</style>

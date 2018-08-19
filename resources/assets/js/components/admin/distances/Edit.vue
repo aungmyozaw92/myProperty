@@ -13,7 +13,7 @@
 		    								<i class="flaticon-placeholder-2"></i>
 		    							</span>
 		    							<h3 class="m-portlet__head-text">
-		    								PropertyType Management
+		    								Distance Management
 		    							</h3>
 		    						</div>
 		    					</div>		    					
@@ -37,7 +37,7 @@
 				    				</div>
 				    				<div class="m-portlet__foot m-portlet__foot--fit">
 				    					<div class="m-form__actions">
-				    						<button type="button" v-on:click="UpdatePropertyType()" class="btn btn-success">
+				    						<button type="button" v-on:click="UpdateDistance()" class="btn btn-success">
 				    							Submit
 				    						</button>
 				    					</div>
@@ -64,7 +64,7 @@ export default{
 		}
 	},
 	mounted() {
-		axios.get('/api/property_types/'+this.id).then(response=>{
+		axios.get('/api/distances/'+this.id).then(response=>{
 			var purpose = response.data
 			this.name = purpose.name
 		}).catch(error=>{
@@ -72,11 +72,11 @@ export default{
 		})
 	},
 	methods: {
-		UpdatePropertyType() {
-			axios.put('/api/property_types/'+this.id, {
+		UpdateDistance() {
+			axios.put('/api/distances/'+this.id, {
 				name: this.name
 			}).then(response=>{
-				this.$router.push('/admin/property_types');
+				this.$router.push('/admin/distances');
 			}).catch(error=>{
 				console.log(error.response)
 				if (error.response.status = 422) {
