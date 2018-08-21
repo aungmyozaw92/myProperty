@@ -56,7 +56,7 @@
          <!--begin::Page Resources -->
         <script src="{{ asset('admin/assets/demo/default/custom/crud/forms/widgets/select2.js') }}"></script>
         <!--end::Page Resources -->
-
+        
 		
 	</body>
 	<!-- end::Body -->

@@ -1,14 +1,18 @@
 <template>
 	<!-- <div> -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
+            <span v-if="loginUser">
 				<Header/>
-				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
-				    <Sidebar/>
-				    <h2>{{welcome}}</h2>
+            </span>
+				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">   
+                    <span v-if="loginUser">
+                         <Sidebar/>
+                    </span>
 				    <router-view></router-view>
-					
 				</div>
-				<Footer/>
+                <span v-if="loginUser">
+				    <Footer/>
+                </span>
 			</div>
 	<!-- </div> -->
 </template>
@@ -20,8 +24,8 @@
     export default {
         name: 'main-app',
         computed: {
-        	welcome(){
-        		return this.$store.getters.welcome
+        	loginUser(){
+        		return this.$store.getters.currentUser
         	}
         },
         components: {
