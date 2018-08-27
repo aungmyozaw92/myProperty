@@ -10,6 +10,8 @@
                     </span>
 				    <router-view></router-view>
 				</div>
+                <h6>{{loginUser}}</h6>
+                <br><br>
                 <span v-if="loginUser">
 				    <Footer/>
                 </span>

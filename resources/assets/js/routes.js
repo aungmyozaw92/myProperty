@@ -14,9 +14,14 @@ import DistanceAdd from './components/admin/distances/Add.vue';
 import DistanceEdit from './components/admin/distances/Edit.vue';
 
 export const routes = [
-{
+	{
+		name: 'login',
+		path: '/admin/login',
+		component: Login
+	},
+	{
 		name: 'dashboard',
-		path: '/',
+		path: '/admin/home',
 		component: Dashboard,
 		meta: {
 			requiresAuth: true
@@ -29,13 +34,7 @@ export const routes = [
 		meta: {
 			requiresAuth: true
 		}
-	},
-	{
-		name: 'login',
-		path: '/login',
-		component: Login
-	},
-
+	},	
 //User Routes
 	{
 		name: 'Users.Index',

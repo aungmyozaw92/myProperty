@@ -1,6 +1,6 @@
 <template>
-   <!-- <div class="m-grid m-grid--hor m-grid--root m-page login-main" > -->
-            <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signin m-login--2 m-login-2--skin-1 login-main" id="m_login " v-bind:style="{ backgroundImage: 'url(admin/assets/app/media/img/bg/bg-1.jpg)' }" >
+   <div class="m-grid m-grid--hor m-grid--root m-page login-main"  v-bind:style="{ backgroundImage: 'url(assets/app/media/img/bg/bg-1.jpg)' }" >
+            <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signin m-login--2 m-login-2--skin-1 login-main" id="m_login " >
                 <div class="m-grid__item m-grid__item--fluid m-login__wrapper">
                     <div class="m-login__container">
                         <div class="m-login__logo">
@@ -14,13 +14,13 @@
                                     Sign In To Admin
                                 </h3>
                             </div>
-                            <form class="m-login__form m-form" method="POST" action="">
+                            <form @submit.prevent="authenticate" class="m-login__form m-form" >
                                 <div class="form-group m-form__group">
-                                   <input id="username" type="text" class=" m-input form-control" name="username"required autofocus>
+                                   <input id="email" type="text" v-model="form.email" class=" m-input form-control" name="email"required autofocus>
                                 </div>
                                 <div class="form-group m-form__group">
 
-                                     <input id="password" type="password" class="form-control m-input m-login__form-input--last " name="password" required>
+                                     <input id="password" type="password" class="form-control m-input m-login__form-input--last " v-model="form.password" name="password" required>
                                 </div>
                                 <!-- <div class="row m-login__form-sub">
                                     <div class="col m--align-left m-login__form-left">
@@ -37,7 +37,7 @@
                                     </div>
                                 </div> -->
                                 <div class="m-login__form-action">
-                                    <button type="submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primary">
+                                    <button type="submit" value="Login" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primary">
                                 Login
                                 </button>
                                 </div>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-        <!-- </div> -->
+        </div>
 </template>
 
 <script>

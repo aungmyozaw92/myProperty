@@ -78,10 +78,10 @@
         methods: {
         	deletePurpose(id,index) {
 				axios.delete('/api/purposes/'+id).then(response=>{
-					console.log(response)
+					this.$toasted.error(response.data);
 					this.purposes.splice(index,1)
 				}).catch(error=>{
-					console.log(error)
+					this.$toasted.error(error);
 				})
 			},
 

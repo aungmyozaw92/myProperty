@@ -11,13 +11,19 @@
 |
 */
 
-Route::get('{any}',function(){
+Route::get('admin/{any}',function(){
 	return view("home");
 })->where('any','.*');
+
+Route::get('{any}',function(){
+	return view("welcome");
+})->where('any','.*');
+
+Route::resource('products','ProductController');
 // Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/admin', 'HomeController@index')->name('home');
 
- Auth::routes();
+ // Auth::routes();
  // Authentication Routes...
 // Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
 // Route::post('admin/login', 'Auth\LoginController@login');

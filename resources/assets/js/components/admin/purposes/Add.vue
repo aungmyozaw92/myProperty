@@ -85,9 +85,10 @@
 					name: this.name,
 				}).then(response=>{
 					this.$router.push('/admin/purposes');
+					this.$toasted.success(response.data);
 				}).catch(error=>{
 					if (error.response.status = 422) {
-						this.errors = error.response.data.errors
+						this.errors = error.response.data.errors;
 					}
 				})
 			}

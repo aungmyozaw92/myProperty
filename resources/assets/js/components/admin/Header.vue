@@ -472,10 +472,10 @@
                                                 </div>
                                                 <div class="m-card-user__details">
                                                     <span class="m-card-user__name m--font-weight-500">
-                                                        <!-- {{ Auth::user()->name }} -->
+                                                        {{ currentUser.name }}
                                                     </span>
                                                     <a href="" class="m-card-user__email m--font-weight-300 m-link">
-                                                     <!-- {{ Auth::user()->email }} -->
+                                                     {{ currentUser.email }}
                                                  </a>
                                              </div>
                                          </div>
@@ -505,34 +505,16 @@
                                                         </span>
                                                     </a>
                                                 </li>
-                                                <li class="m-nav__item">
-                                                    <a href="header/profile.html" class="m-nav__link">
-                                                        <i class="m-nav__link-icon flaticon-share"></i>
-                                                        <span class="m-nav__link-text">
-                                                            Activity
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="m-nav__item">
-                                                    <a href="header/profile.html" class="m-nav__link">
-                                                        <i class="m-nav__link-icon flaticon-chat-1"></i>
-                                                        <span class="m-nav__link-text">
-                                                            Messages
-                                                        </span>
-                                                    </a>
-                                                </li>
+                                               
                                                 <li class="m-nav__separator m-nav__separator--fit"></li>
 
                                                 <li class="m-nav__separator m-nav__separator--fit"></li>
                                                 <li class="m-nav__item">
-                                                    <a href="#"
-                                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
+                                                    <a href="#!"
+                                                    @click.prevent="logout" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
                                                     Logout
                                                 </a>            
-                                                <form id="logout-form" action="/admin/logout" method="POST" style="display: none;">
-                                                    @csrf
-                                                </form>
+                                                
                                             </li>
                                         </ul>
                                     </div>
@@ -553,9 +535,19 @@
 </template>
 
 <script>
-    // export default {
-    //     name: 'header'
-    // }
+    export default {
+        computed: {
+            currentUser(){
+                return this.$store.getters.currentUser
+            }
+        },
+        methods: {
+            logout() {
+                this.$store.commit('logout');
+                this.$router.push('/admin/login');
+            }
+        }
+    }
 </script>
 
 

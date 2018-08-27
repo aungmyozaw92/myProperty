@@ -28,7 +28,7 @@ class PurposeController extends Controller
     public function store(PurposeRequest $request)
     {
         $purpose = $this->purpose->create($request->all(),'purpose');
-        return response()->json($purpose);
+        return response()->json('User has been successfully Added');
     }
 
 

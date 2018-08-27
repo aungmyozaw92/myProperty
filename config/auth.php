@@ -35,14 +35,24 @@ return [
     |
     */
 
-    'guards' => [
+ 'guards' => [
         'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'frontend' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
 
         'api' => [
             'driver' => 'jwt',
+            'provider' => 'users',
+        ],
+
+        'frontend_api' => [
+            'driver' => 'session',
             'provider' => 'users',
         ],
     ],
@@ -70,9 +80,9 @@ return [
             'model' => App\User::class,
         ],
 
-        // 'users' => [
+        // 'agents' => [
         //     'driver' => 'database',
-        //     'table' => 'users',
+        //     'model' => App\Agent::class,
         // ],
     ],
 
